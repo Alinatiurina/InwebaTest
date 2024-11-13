@@ -68,3 +68,30 @@ menuList.addEventListener('click', (e) => {
     coursesMenu.classList.remove("courses-is-open")
     return;
 })
+
+
+const mobileBtn = document.querySelector(".mobile-menu-btn");
+const closeBtn = document.querySelector(".mobile-close-btn");
+const mob = document.querySelector(".mobile-menu");
+const mobList = document.querySelector('.mobile-menu-list');
+
+
+function mobileMenuOpen() {
+ mob.classList.add("is-open") 
+}
+function mobileMenuClose() {
+ mob.classList.remove("is-open") 
+}
+mobileBtn.addEventListener("click", mobileMenuOpen);
+closeBtn.addEventListener("click", mobileMenuClose);
+
+mainDoc.addEventListener('click', (e) => {
+    if (e.target !== mob) {
+        mob.classList.remove("is-open")
+        return;
+    }
+})
+mobList.addEventListener('click', (e) => {
+        mob.classList.remove("is-open")
+        return;
+})

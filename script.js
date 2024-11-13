@@ -25,7 +25,6 @@ document.addEventListener("DOMContentLoaded", () => {
       prevEl: '.slider-btn-prev',
     },
     keyboard: true,
-    mousewheel: true,
     slidesPerView: 1,
     spaceBetween: 24,
     breakpoints: {
@@ -51,6 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const btn = document.querySelector(".header-courses-btn");
   const coursesMenu = document.querySelector(".courses-menu-container");
   const mainDoc = document.querySelector('main');
+  const menuList = document.querySelector('.courses-menu-list');
 
   function coursesMenuOpen() {
     coursesMenu.classList.toggle("courses-is-open") 
@@ -63,4 +63,8 @@ document.addEventListener("DOMContentLoaded", () => {
         coursesMenu.classList.remove("courses-is-open")
         return;
     }
+})
+menuList.addEventListener('click', (e) => {
+    coursesMenu.classList.remove("courses-is-open")
+    return;
 })

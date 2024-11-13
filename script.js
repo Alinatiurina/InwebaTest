@@ -19,3 +19,48 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   });
+  const swiper = new Swiper('.swiper', {
+    navigation: {
+      nextEl: '.slider-btn-next',
+      prevEl: '.slider-btn-prev',
+    },
+    keyboard: true,
+    mousewheel: true,
+    slidesPerView: 1,
+    spaceBetween: 24,
+    breakpoints: {
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 24,
+      },
+      1120: {
+        slidesPerView: 2,
+        spaceBetween: 24,
+      },
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+      renderBullet: function (index, className) {
+        return `<span class="${className} custom-pagination-bullet"></span>`;
+      },
+    },
+  });
+
+  
+  const btn = document.querySelector(".header-courses-btn");
+  const coursesMenu = document.querySelector(".courses-menu-container");
+  const mainDoc = document.querySelector('main');
+
+  function coursesMenuOpen() {
+    coursesMenu.classList.toggle("courses-is-open") 
+   }
+
+   btn.addEventListener("click", coursesMenuOpen);
+
+   mainDoc.addEventListener('click', (e) => {
+    if (e.target !== coursesMenu) {
+        coursesMenu.classList.remove("courses-is-open")
+        return;
+    }
+})

@@ -620,6 +620,11 @@ header {
   border: 1px solid #036;
   background-color: #fbfbfb;
 }
+.review-avatar{
+  width: 200px;
+  height: 225px;
+  border-radius: 12px;
+}
 
 .review-name {
   color: #343434;
@@ -702,8 +707,9 @@ header {
 }
 .accordeon-item {
   display: flex;
-  padding: 40px;
-  gap: 40px;
+  padding: 30px 40px;
+ justify-content: space-between;
+  width: 722px;
   align-self: stretch;
   border-radius: 16px;
   border: 1px solid #036;
@@ -714,18 +720,9 @@ header {
   font-size: 20px;
   font-weight: 500;
   line-height: 150%; /* 30px */
-  position: relative;
-  margin-bottom: 60px;
+
 }
-.accordeon-title::after {
-  content: "";
-  width: 612px;
-  height: 1px;
-  background-color: #036;
-  left: 0;
-  bottom: -30px;
-  position: absolute;
-}
+
 .accordeon-btn {
   display: flex;
   width: 40px;
@@ -733,16 +730,29 @@ header {
   padding: 14px;
   justify-content: center;
   align-items: center;
-  gap: 10px;
   border-radius: 100px;
   border-color: transparent;
   background-color: #036;
+  color: #FBFBFB;
+  font-size: 25px;
+  font-weight: 100;
 }
 .accordeon-text {
   color: #343434;
   font-size: 18px;
   line-height: 150%; /* 27px */
   width: 612px;
+  position: relative;
+  margin-top: 60px;
+}
+.accordeon-text::after {
+  content: "";
+  width: 612px;
+  height: 1px;
+  background-color: #036;
+  left: 0;
+  top: -30px;
+  position: absolute;
 }
 .faq-form-container {
   box-sizing: border-box;
